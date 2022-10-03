@@ -7,27 +7,27 @@
 
 using namespace std;
 
-const int functionCountInt = 7; //количество функций для целых чисел
-const int functionCountFloat = 7; //количество функций для дробных чисел
+const int functionCountInt = 7; // Количество функций для целых чисел
+const int functionCountFloat = 7; // Количество функций для дробных чисел
 
-const char* fileNameInt[] = { //массив имён файлов целых последовательностей
-    {"AllRandomInt.csv"},
-    {"UpRegularizeInt.csv"},
-    {"DownRegularizeInt.csv"},
-    {"SawInt.csv"},
-    {"StepInt.csv"},
-    {"QuasiRegularizeInt.csv"},
-    {"SinInt.csv"}
+const char* fileNameInt[] = { // Массив имён файлов целых последовательностей
+    {"AllRandomInt.txt"},
+    {"UpRegularizeInt.txt"},
+    {"DownRegularizeInt.txt"},
+    {"SawInt.txt"},
+    {"StepInt.txt"},
+    {"QuasiRegularizeInt.txt"},
+    {"SinInt.txt"}
 };
 
-const char* fileNameFloat[] = { //массив имён файлов дробных последовательностей
-    {"AllRandomFloat.csv"},
-    {"UpRegularizeFloat.csv"},
-    {"DownRegularizeFloat.csv"},
-    {"SawFloat.csv"},
-    {"StepFloat.csv"},
-    {"QuasiRegularizeFloat.csv"},
-    {"SinFloat.csv"}
+const char* fileNameFloat[] = { // Массив имён файлов дробных последовательностей
+    {"AllRandomFloat.txt"},
+    {"UpRegularizeFloat.txt"},
+    {"DownRegularizeFloat.txt"},
+    {"SawFloat.txt"},
+    {"StepFloat.txt"},
+    {"QuasiRegularizeFloat.txt"},
+    {"SinFloat.txt"}
 };
 
 const char fileNameIn[] = "Input.txt";
@@ -37,30 +37,30 @@ ofstream foutTime(fileTime);
 //основная программа
 int main() {
     //системные команды
-    setlocale(LC_ALL, "ru"); //подключение русской локализации
-    srand(time(NULL)); //инициализация генератора случайных чисел
+    setlocale(LC_ALL, "ru"); // Подключение русской локализации
+    srand(time(NULL)); // Инициализация генератора случайных чисел
 
-    //массив указателей на функции целых чисел
+    // Массив указателей на функции целых чисел
     int* (*MenuInt[functionCountInt])
     (int* arr, int& size, int& minLimitation, int& maxLimitation, int& interval) =
     {AllRandomInt, UpRegularizeInt, DownRegularizeInt, SawInt, StepInt, QuasiRegularizeInt, SinInt};
 
-    //массив указателей на функции дробных чисел
+    // Массив указателей на функции дробных чисел
     float* (*MenuFloat[functionCountFloat])
     (float* arr, int& size, float& minLimitation, float& maxLimitation, int& interval) =
     {AllRandomFloat, UpRegularizeFloat, DownRegularizeFloat, SawFloat, StepFloat, QuasiRegularizeFloat, SinFloat};
 
-    //переменные
-    int size; //количество элементов
-    int interval; //интервал
-    int minLimitationInt; //ограничение на минимальное значение для целых чисел
-    int maxLimitationInt; //ограничение на максимальное значение для целых чисел
-    float minLimitationFloat; //ограничение на минимальное значение для чисел с плавающей точкой
-    float maxLimitationFloat; //ограничение на максимальное значение для чисел с плавающей точкой
+    // Меременные
+    int size; // Количество элементов
+    int interval; // Интервал
+    int minLimitationInt; // Ограничение на минимальное значение для целых чисел
+    int maxLimitationInt; // Ограничение на максимальное значение для целых чисел
+    float minLimitationFloat; // Ограничение на минимальное значение для чисел с плавающей точкой
+    float maxLimitationFloat; // Ограничение на максимальное значение для чисел с плавающей точкой
 
-    //ввод значений переменных с файла
+    // Ввод значений переменных с файла
     ifstream fin ("Input.txt");
-    if (fin.is_open()) { //проверка открытия файла
+    if (fin.is_open()) { // Проверка открытия файла
         fin >> size;
         cout << "size = " << size << endl;
         fin >> interval;
@@ -75,16 +75,16 @@ int main() {
         cout << "maxLimitationFloat = " <<  maxLimitationFloat << endl;
     }
     else {
-        cout << "Файл не найден или повреждённ" << endl; //сообщение об ошибки
+        cout << "Файл не найден или повреждённ" << endl; // Сообщение об ошибки
     }
-    fin.close(); //закрытие файла
+    fin.close(); // Закрытие файла
 
     cout << "Целочисленные последовательности:" << endl;
 
-    //начало отсчёта выполнения алгоритма для целых чисел
+    // Начало отсчёта выполнения алгоритма для целых чисел
     auto beginInt = chrono::steady_clock::now();
 
-    int arrInt[size]; //создание массива целых чисел
+    int arrInt[size]; // Создание массива целых чисел
 
     for (int i = 0; i < functionCountInt; i++) {
         MenuInt[i](arrInt, size, minLimitationInt, maxLimitationInt, interval);
@@ -92,25 +92,28 @@ int main() {
         cout << fileNameInt[i] << ": ";
         for (int j = 0; j < size; j++) {
             cout << "[" << j << "]: " << arrInt[j] << "; ";
-            fout << arrInt[j] << ";";
+            fout << arrInt[j];
+            if (j != size - 1) {
+                fout << "\n";
+            }
         }
         cout << endl;
-        fout.close(); //закрытие файла
+        fout.close(); // Закрытие файла
     }
 
-    //конец работы алгоритма для целых чисел
+    // Конец работы алгоритма для целых чисел
     auto endInt = chrono::steady_clock::now();
-    //вывод времени затраченого на выполнения алгорима для целых чисел
+    // Вывод времени затраченого на выполнения алгорима для целых чисел
     cout << "Время работы алгоритма для целых чисел: " << std::chrono::duration_cast<std::chrono::microseconds>(endInt - beginInt).count() << "ms" << endl;
-    //запись времени выполнения алгоритма для целых чисел в файл
+    // Запись времени выполнения алгоритма для целых чисел в файл
     //fileTime << std::chrono::duration_cast<std::chrono::microseconds>(endInt - beginInt).count() << ";";
 
     cout << "Дробные последовательности:" << endl;
 
-    //начало отсчёта выполнения алгоритма для дробных чисел
+    // Начало отсчёта выполнения алгоритма для дробных чисел
     auto beginFloat = chrono::steady_clock::now();
 
-    float arrFloat[size]; //создание массива дробных чисел
+    float arrFloat[size]; // Создание массива дробных чисел
 
     for (int i = 0; i < functionCountFloat; i++) {
         MenuFloat[i](arrFloat, size, minLimitationFloat, maxLimitationFloat, interval);
@@ -118,15 +121,18 @@ int main() {
         cout << fileNameFloat[i] << ": ";
         for (int j = 0; j < size; j++) {
             cout << "[" << j << "]: " << arrInt[j] << "; ";
-            fout << arrInt[j] << ";;";
+            fout << arrInt[j];
+            if (j != size - 1) {
+                fout << "\n";
+            }
         }
         cout << endl;
-        fout.close(); //закрытие файла
+        fout.close(); // Закрытие файла
     }
 
-    //Конец работы алгоритма для дробных чисел
+    // Конец работы алгоритма для дробных чисел
     auto endFloat = chrono::steady_clock::now();
     cout << "Время работы алгоритма для дробных чисел: " << std::chrono::duration_cast<std::chrono::microseconds>(endFloat - beginFloat).count() << "ms" << endl;
-    //запись времени выполнения алгоритма для дробных чисел в файл
+    // Запись времени выполнения алгоритма для дробных чисел в файл
     //fileTime << std::chrono::duration_cast<std::chrono::microseconds>(endFloat - beginFloat).count() << ";";
 }

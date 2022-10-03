@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <math.h>
 
 using namespace std;
 
@@ -6,12 +7,12 @@ int main()
 {
     setlocale(LC_ALL, "Russian");
     double x;
-    double chisl;     //Числитель в слагаемом
-    double tsum;      //Точная сумма
-    double sum;       //Получаемая сумма
-    double slag;      //Слагаемое
-    double diff;      //Получемая разность с точной суммой
-    double eps;       //Задаваемая точность
+    double chisl;     // Числитель в слагаемом
+    double tsum;      // Точная сумма
+    double sum;       // Получаемая сумма
+    double slag;      // Слагаемое
+    double diff;      // Получемая разность с точной суммой
+    double eps;       // Задаваемая точность
     long double fact; // Факториал
     int n;            // Количество слагаемых
     short znak;       // Переменная, отвечающая за смену знака слагаемого
@@ -26,7 +27,7 @@ int main()
     
 
     tsum = sin(x);
-    chisl = 0
+    chisl = 0;
     diff = eps;
     sum = 0;
     n = 0;
