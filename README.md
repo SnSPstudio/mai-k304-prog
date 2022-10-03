@@ -1,1 +1,1 @@
-# mai_prog
+# mai-k304-prog
