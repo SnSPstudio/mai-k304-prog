@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.22) # Минимальная версия Cmake
 
-project(sem3-lab1-v1) # Название проекта
+project(lab-01-v01) # Название проекта
 
 set(CMAKE_CXX_STANDARD 11) # Версия стандарта C++
 
@@ -10,6 +10,6 @@ set(SOURCE_LIB src/function.cpp) # Установка переменной со 
 
 add_library(function STATIC ${SOURCE_LIB}) # Создание статической библиотеки
 
-add_executable(main ${SOURCE_EXE}) # Создаие исполняеого файла
+add_executable(lab-01-v01 ${SOURCE_EXE}) # Создаие исполняеого файла
 
-target_link_libraries(main function) # Линковка программы с библиотекой
+target_link_libraries(lab-01-v01 function) # Линковка программы с библиотекой

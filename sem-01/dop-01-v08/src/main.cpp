@@ -46,7 +46,7 @@ int main()
         flag = true;
         size++;
     }
-    size-=1
+    size-=1;
     ifs.seekg(0, ios::beg);                                  //Возращение в начало файла
     if (size == 1) {
         cout << "Массив из одного элемента" << endl;
