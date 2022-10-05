@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alex_pyslar/projects/mai-k304-prog/sem-03/lab-01-v01
+CMAKE_SOURCE_DIR = /home/alex_pyslar/projects/SnSP-repos/mai-k304-prog/sem-03/lab-01-v01
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alex_pyslar/projects/mai-k304-prog/sem-03/lab-01-v01/build
+CMAKE_BINARY_DIR = /home/alex_pyslar/projects/SnSP-repos/mai-k304-prog/sem-03/lab-01-v01/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/function.dir/depend.make
@@ -72,16 +72,16 @@ include CMakeFiles/function.dir/flags.make
 CMakeFiles/function.dir/src/function.cpp.o: CMakeFiles/function.dir/flags.make
 CMakeFiles/function.dir/src/function.cpp.o: ../src/function.cpp
 CMakeFiles/function.dir/src/function.cpp.o: CMakeFiles/function.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex_pyslar/projects/mai-k304-prog/sem-03/lab-01-v01/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/function.dir/src/function.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/function.dir/src/function.cpp.o -MF CMakeFiles/function.dir/src/function.cpp.o.d -o CMakeFiles/function.dir/src/function.cpp.o -c /home/alex_pyslar/projects/mai-k304-prog/sem-03/lab-01-v01/src/function.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/alex_pyslar/projects/SnSP-repos/mai-k304-prog/sem-03/lab-01-v01/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/function.dir/src/function.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/function.dir/src/function.cpp.o -MF CMakeFiles/function.dir/src/function.cpp.o.d -o CMakeFiles/function.dir/src/function.cpp.o -c /home/alex_pyslar/projects/SnSP-repos/mai-k304-prog/sem-03/lab-01-v01/src/function.cpp
 
 CMakeFiles/function.dir/src/function.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/function.dir/src/function.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex_pyslar/projects/mai-k304-prog/sem-03/lab-01-v01/src/function.cpp > CMakeFiles/function.dir/src/function.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/alex_pyslar/projects/SnSP-repos/mai-k304-prog/sem-03/lab-01-v01/src/function.cpp > CMakeFiles/function.dir/src/function.cpp.i
 
 CMakeFiles/function.dir/src/function.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/function.dir/src/function.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex_pyslar/projects/mai-k304-prog/sem-03/lab-01-v01/src/function.cpp -o CMakeFiles/function.dir/src/function.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/alex_pyslar/projects/SnSP-repos/mai-k304-prog/sem-03/lab-01-v01/src/function.cpp -o CMakeFiles/function.dir/src/function.cpp.s
 
 # Object files for target function
 function_OBJECTS = \
@@ -93,7 +93,7 @@ function_EXTERNAL_OBJECTS =
 libfunction.a: CMakeFiles/function.dir/src/function.cpp.o
 libfunction.a: CMakeFiles/function.dir/build.make
 libfunction.a: CMakeFiles/function.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alex_pyslar/projects/mai-k304-prog/sem-03/lab-01-v01/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libfunction.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/alex_pyslar/projects/SnSP-repos/mai-k304-prog/sem-03/lab-01-v01/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libfunction.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/function.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/function.dir/link.txt --verbose=$(VERBOSE)
 
@@ -106,6 +106,6 @@ CMakeFiles/function.dir/clean:
 .PHONY : CMakeFiles/function.dir/clean
 
 CMakeFiles/function.dir/depend:
-	cd /home/alex_pyslar/projects/mai-k304-prog/sem-03/lab-01-v01/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alex_pyslar/projects/mai-k304-prog/sem-03/lab-01-v01 /home/alex_pyslar/projects/mai-k304-prog/sem-03/lab-01-v01 /home/alex_pyslar/projects/mai-k304-prog/sem-03/lab-01-v01/build /home/alex_pyslar/projects/mai-k304-prog/sem-03/lab-01-v01/build /home/alex_pyslar/projects/mai-k304-prog/sem-03/lab-01-v01/build/CMakeFiles/function.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/alex_pyslar/projects/SnSP-repos/mai-k304-prog/sem-03/lab-01-v01/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/alex_pyslar/projects/SnSP-repos/mai-k304-prog/sem-03/lab-01-v01 /home/alex_pyslar/projects/SnSP-repos/mai-k304-prog/sem-03/lab-01-v01 /home/alex_pyslar/projects/SnSP-repos/mai-k304-prog/sem-03/lab-01-v01/build /home/alex_pyslar/projects/SnSP-repos/mai-k304-prog/sem-03/lab-01-v01/build /home/alex_pyslar/projects/SnSP-repos/mai-k304-prog/sem-03/lab-01-v01/build/CMakeFiles/function.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/function.dir/depend
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/alex_pyslar/projects/mai-k304-prog/sem-03/lab-01-v01
+# Install script for directory: /home/alex_pyslar/projects/SnSP-repos/mai-k304-prog/sem-03/lab-01-v01
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/alex_pyslar/projects/mai-k304-prog/sem-03/lab-01-v01/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/alex_pyslar/projects/SnSP-repos/mai-k304-prog/sem-03/lab-01-v01/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

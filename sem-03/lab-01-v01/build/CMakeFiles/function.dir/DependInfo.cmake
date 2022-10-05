@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/alex_pyslar/projects/mai-k304-prog/sem-03/lab-01-v01/src/function.cpp" "CMakeFiles/function.dir/src/function.cpp.o" "gcc" "CMakeFiles/function.dir/src/function.cpp.o.d"
+  "/home/alex_pyslar/projects/SnSP-repos/mai-k304-prog/sem-03/lab-01-v01/src/function.cpp" "CMakeFiles/function.dir/src/function.cpp.o" "gcc" "CMakeFiles/function.dir/src/function.cpp.o.d"
   )
 
 # Targets to which this target links.
