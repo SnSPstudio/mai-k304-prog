@@ -7,163 +7,209 @@
 
 // Реализация функций
 void* AllRandom( // Функция формирующая случайную последовательность
-    int* arrInt, // Массив целых чисел
-    float* arrFloat, // Массив дробных чисел
+    int* arr, // Массив
+    int& size, // Количество элементов
+    int& minLimitation, // Ограничение на минимальное рандомное число
+    int& maxLimitation, // Ограничение на максимальное рандомное число
+    int& interval // Интервал
+) {
+    // Алгоритм для целых чисел
+    for (int i = 0; i < size; i++) {
+        arr[i] = minLimitation + rand() % (maxLimitation - minLimitation);
+    }
+    return 0;
+}
+
+void* AllRandom( // Функция формирующая случайную последовательность
+    float* arr, // Массив
     int& size, // Количество элементов
     float& minLimitation, // Ограничение на минимальное рандомное число
     float& maxLimitation, // Ограничение на максимальное рандомное число
     int& interval // Интервал
 ) {
-    // Алгоритм для целых чисел
     for (int i = 0; i < size; i++) {
-        arrInt[i] = round(minLimitation + rand() % int(maxLimitation - minLimitation));
-    }
-    // Алгоритм для дробных чисел
-    for (int i = 0; i < size; i++) {
-        arrFloat[i] = minLimitation + rand() % int(maxLimitation - minLimitation);
+        arr[i] = minLimitation + rand() % int(maxLimitation - minLimitation);
     }
     return 0;
 }
 
 void* UpRegularize( // Функция формирующая упорядоченную последовательность по возрастанию
-    int* arrInt, // Массив целых чисел
-    float* arrFloat, // Массив дробных чисел
+    int* arr, // Массив
+    int& size, // Количество элементов
+    int& minLimitation, // Ограничение на минимальное рандомное число
+    int& maxLimitation, // Ограничение на максимальное рандомное число
+    int& interval // Интервал
+) {
+    // Алгоритм для целых чисел
+    for (int i = 1; i < size; i++) {
+        arr[i] = i * (maxLimitation - minLimitation) / (size - 1) + minLimitation;
+    }
+    return 0;
+}
+
+void* UpRegularize( // Функция формирующая упорядоченную последовательность по возрастанию
+    float* arr, // Массив
     int& size, // Количество элементов
     float& minLimitation, // Ограничение на минимальное рандомное число
     float& maxLimitation, // Ограничение на максимальное рандомное число
     int& interval // Интервал
 ) {
-    // Алгоритм для целых чисел
     for (int i = 1; i < size; i++) {
-        arrInt[i] = round(i * (maxLimitation - minLimitation) / (size - 1) + minLimitation);
-    }
-    // Алгоритм для дробных чисел
-    for (int i = 1; i < size; i++) {
-        arrFloat[i] = (i * (maxLimitation - minLimitation) / (size - 1) + minLimitation);
+        arr[i] = (i * (maxLimitation - minLimitation) / (size - 1) + minLimitation);
     }
     return 0;
 }
 
 void* DownRegularize( // Функция формирующая упорядоченную последовательность по убыванию
-    int* arrInt, // Массив целых чисел
-    float* arrFloat, // Массив дробных чисел
+    int* arr, // Массив
+    int& size, // Количество элементов
+    int& minLimitation, // Ограничение на минимальное рандомное число
+    int& maxLimitation, // Ограничение на максимальное рандомное число
+    int& interval // Интервал
+) {
+    // Алгоритм для целых чисел
+    arr[0] = minLimitation;
+    for (int i = 1; i < size; i++) {
+        arr[i] = i * -(maxLimitation - minLimitation) / (size - 1) + minLimitation;
+    }
+    return 0;
+}
+
+void* DownRegularize( // Функция формирующая упорядоченную последовательность по убыванию
+    float* arr, // Массив
     int& size, // Количество элементов
     float& minLimitation, // Ограничение на минимальное рандомное число
     float& maxLimitation, // Ограничение на максимальное рандомное число
     int& interval // Интервал
 ) {
-    // Алгоритм для целых чисел
-    arrInt[0] = round(minLimitation);
+    arr[0] = minLimitation;
     for (int i = 1; i < size; i++) {
-        arrInt[i] = round(i * -(maxLimitation - minLimitation) / (size - 1) + minLimitation);
-    }
-    // Алгоритм для дробных чисел
-    arrFloat[0] = minLimitation;
-    for (int i = 1; i < size; i++) {
-        arrFloat[i] = (i * -(maxLimitation - minLimitation) / (size - 1) + minLimitation);
+        arr[i] = i * -(maxLimitation - minLimitation) / (size - 1) + minLimitation;
     }
     return 0;
 }
 
 void* Saw( // Функция формирующая пилообразную последовательность
-    int* arrInt, // Массив целых чисел
-    float* arrFloat, // Массив дробных чисел
+    int* arr, // Массив
+    int& size, // Количество элементов
+    int& minLimitation, // Ограничение на минимальное рандомное число
+    int& maxLimitation, // Ограничение на максимальное рандомное число
+    int& interval // Интервал
+) {
+    arr[0] = 20; // Первый элемент последовательности
+    for (int i = 0; i < size; i++) {
+        arr[i] = round((i % interval) * ((maxLimitation - minLimitation) / interval) + minLimitation);
+    }
+    return 0;
+}
+
+void* Saw( // Функция формирующая пилообразную последовательность
+    float* arr, // Массив
     int& size, // Количество элементов
     float& minLimitation, // Ограничение на минимальное рандомное число
     float& maxLimitation, // Ограничение на максимальное рандомное число
     int& interval // Интервал
 ) {
-    // Алгоритм для целых чисел
-    arrInt[0] = 20; // Первый элемент последовательности
+    arr[0] = 20; // Первый элемент последовательности
     for (int i = 0; i < size; i++) {
-        arrInt[i] = round((i % interval) * ((maxLimitation - minLimitation) / interval) + minLimitation);
-    }
-    // Алгоритм для дробных чисел
-    arrFloat[0] = 20; // Первый элемент последовательности
-    for (int i = 0; i < size; i++) {
-        arrFloat[i] = ((i % interval) * ((maxLimitation - minLimitation) / interval) + minLimitation);
+        arr[i] = ((i % interval) * ((maxLimitation - minLimitation) / interval) + minLimitation);
     }
     return 0;
 }
 
 void* Step( // Функция формирующая ступенчатую последовательность
-    int* arrInt, // Массив целых чисел
-    float* arrFloat, // Массив дробных чисел
+    int* arr, // Массив
     int& size, // Количество элементов
-    float& minLimitation, // Ограничение на минимальное рандомное число
-    float& maxLimitation, // Ограничение на максимальное рандомное число
+    int& minLimitation, // Ограничение на минимальное рандомное число
+    int& maxLimitation, // Ограничение на максимальное рандомное число
     int& interval // Интервал
 ) {
     // Алгоритм для целых чисел
     int lift = 0; // Размер перехода
     for (int i = 0; i < size; i++) {
         if ((i % interval) != 0) { // Достигает периода
-            arrInt[i] = (rand() % 5 + 1) + lift;
+            arr[i] = (rand() % 5 + 1) + lift;
         }
         else {
-            arrInt[i] = (rand() % 10 + 20) + lift;
-            lift = arrInt[i]; // Обновление значения перехода
+            arr[i] = (rand() % 10 + 20) + lift;
+            lift = arr[i]; // Обновление значения перехода
         }
     }
-    // Алгоритм для дробных чисел
-    lift = 0; // Размер перехода
+    return 0;
+}
+
+void* Step( // Функция формирующая ступенчатую последовательность
+    float* arr, // Массив
+    int& size, // Количество элементов
+    float& minLimitation, // Ограничение на минимальное рандомное число
+    float& maxLimitation, // Ограничение на максимальное рандомное число
+    int& interval // Интервал
+) {
+    float lift = 0; // Размер перехода
     for (int i = 0; i < size; i++) {
         if ((i % interval) != 0) { // Достигает периода
-            arrFloat[i] = (float(rand() % 100) + 0.6342) + lift;
+            arr[i] = (float(rand() % 100) + 0.6342) + lift;
         }
         else {
-            arrFloat[i] = (float(rand() % 100) + 0.6342) + lift;
-            lift = arrFloat[i]; // Обновление значения перехода
+            arr[i] = (float(rand() % 100) + 0.6342) + lift;
+            lift = arr[i]; // Обновление значения перехода
         }
     }
     return 0;
 }
 
 void* QuasiRegularize( //функция формирующая квази-упорядоченную последовательность
-    int* arrInt, // Массив целых чисел
-    float* arrFloat, // Массив дробных чисел
+    int* arr, // Массив
+    int& size, // Количество элементов
+    int& minLimitation, // Ограничение на минимальное рандомное число
+    int& maxLimitation, // Ограничение на максимальное рандомное число
+    int& interval // Интервал
+) {
+    // Алгоритм для целых чисел
+    int temp = 0;
+    arr[0] = 0; // Первый элемент массива
+    for (int i = 1; i < size; i++) {
+        arr[i] = arr[i - 1] + round((maxLimitation-minLimitation)/(size-1));
+    }
+    for (int i = 1; i < size; i++) {
+        if (i % 10 == 0) {
+            int a = rand() % (size - 1);
+            temp = arr[i];
+            arr[i] = arr[a];
+            arr[a] = temp;
+        }
+    }
+    return 0;
+}
+
+void* QuasiRegularize( //функция формирующая квази-упорядоченную последовательность
+    float* arr, // Массив
     int& size, // Количество элементов
     float& minLimitation, // Ограничение на минимальное рандомное число
     float& maxLimitation, // Ограничение на максимальное рандомное число
     int& interval // Интервал
 ) {
-    // Алгоритм для целых чисел
     float temp = 0;
-    arrInt[0] = 0; // Первый элемент массива
+    arr[0] = 0; // Первый элемент массива
     for (int i = 1; i < size; i++) {
-        arrInt[i] = arrInt[i - 1] + round((maxLimitation-minLimitation)/(size-1));
+        arr[i] = arr[i - 1] + 5 + 0.6342;
     }
     for (int i = 1; i < size; i++) {
         if (i % 10 == 0) {
-            int a = rand() % (size - 1);
-            temp = arrInt[i];
-            arrInt[i] = arrInt[a];
-            arrInt[a] = round(temp);
-        }
-    }
-    // Алгоритм для дробных чисел
-    temp = 0;
-    arrFloat[0] = 0; // Первый элемент массива
-    for (int i = 1; i < size; i++) {
-        arrFloat[i] = arrFloat[i - 1] + 5 + 0.6342;
-    }
-    for (int i = 1; i < size; i++) {
-        if (i % 10 == 0) {
-            float a = float(rand() % (size - 1)) + 0.6342;
-            temp = arrFloat[i];
-            arrFloat[i] = arrFloat[int(a)];
-            arrFloat[int(a)] = temp;
+            int a = int(rand() % (size - 1) + 0.6342);
+            temp = arr[i];
+            arr[i] = arr[a];
+            arr[a] = temp;
         }
     }
     return 0;
 }
 
 void* Sin( // Функция формирующая синусоидаобразную последовательность
-    int* arrInt, // Массив целых чисел
-    float* arrFloat, // Массив дробных чисел
+    int* arr, // Массив
     int& size, // Количество элементов
-    float& minLimitation, // Ограничение на минимальное рандомное число
-    float& maxLimitation, // Ограничение на максимальное рандомное число
+    int& minLimitation, // Ограничение на минимальное рандомное число
+    int& maxLimitation, // Ограничение на максимальное рандомное число
     int& interval // Интервал
 ) {
     // Алгоритм для целых чисел
@@ -171,11 +217,23 @@ void* Sin( // Функция формирующая синусоидаобраз
     float center = minLimitation + a;
     float period = 2 * M_PI;
     for (int i = 0; i < size; i++) {
-        arrInt[i] = round((a * sin(2 * M_PI * i / period)) + center);
+        arr[i] = round((a * sin(2 * M_PI * i / period)) + center);
     }
-    // Алгоритм для дробных чисел
+    return 0;
+}
+
+void* Sin( // Функция формирующая синусоидаобразную последовательность
+    float* arr, // Массив
+    int& size, // Количество элементов
+    float& minLimitation, // Ограничение на минимальное рандомное число
+    float& maxLimitation, // Ограничение на максимальное рандомное число
+    int& interval // Интервал
+) {
+    float a = (maxLimitation - minLimitation) / 2;
+    float center = minLimitation + a;
+    float period = 2 * M_PI;
     for (int i = 0; i < size; i++) {
-        arrFloat[i] = (a * sin(2 * M_PI * i / period)) + center;
+        arr[i] = (a * sin(2 * M_PI * i / period)) + center;
     }
     return 0;
 }
