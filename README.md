@@ -1,1 +1,15 @@
-# mai-k304-prog
+# МАИ. Кафедра 304. лабораторные и дополительные задания по программированию:
+### Пысларь Александр & Осминнов Никита & Вожегов Артём
+* [**Семестр 1:**](https://github.com/SnSPstudio/mai-k304-prog/tree/main/sem-01)
+  + [Лабораторная работа №1. Вариант №15](https://github.com/SnSPstudio/mai-k304-prog/tree/main/sem-01/lab-01-v15)
+  + [Лабораторная работа №2. Вариант №15](https://github.com/SnSPstudio/mai-k304-prog/tree/main/sem-01/lab-02-v15)
+  + [Лабораторная работа №3. Вариант №15](https://github.com/SnSPstudio/mai-k304-prog/tree/main/sem-01/lab-03-v15)
+  + [Дополнительное задание №1. Вариант №8](https://github.com/SnSPstudio/mai-k304-prog/tree/main/sem-01/dop-01-v08)
+  + [Дополнительное задание №1. Вариант №13](https://github.com/SnSPstudio/mai-k304-prog/tree/main/sem-01/dop-01-v13)
+* [**Семестр 2:**](https://github.com/SnSPstudio/mai-k304-prog/tree/main/sem-02)
+  + [Лабораторная работа №1. Вариант №15](https://github.com/SnSPstudio/mai-k304-prog/tree/main/sem-02/lab-01-v15)
+  + [Лабораторная работа №2. Вариант №15](https://github.com/SnSPstudio/mai-k304-prog/tree/main/sem-02/lab-02-v15)
+  + [Лабораторная работа №3. Вариант №15](https://github.com/SnSPstudio/mai-k304-prog/tree/main/sem-02/lab-03-v15)
+  + [Дополнительное задание №1. Вариант №23](https://github.com/SnSPstudio/mai-k304-prog/tree/main/sem-02/dop-01-v23)
+* [**Семестр 3:**](https://github.com/SnSPstudio/mai-k304-prog/tree/main/sem-03)
+  + [Лабораторная работа №1. Вариант №1](https://github.com/SnSPstudio/mai-k304-prog/tree/main/sem-03/lab-03-v01)
