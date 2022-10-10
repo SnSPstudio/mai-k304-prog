@@ -12,4 +12,4 @@
   + [Лабораторная работа №3. Вариант №15](https://github.com/SnSPstudio/mai-k304-prog/tree/main/sem-02/lab-03-v15)
   + [Дополнительное задание №1. Вариант №23](https://github.com/SnSPstudio/mai-k304-prog/tree/main/sem-02/dop-01-v23)
 * [**Семестр 3:**](https://github.com/SnSPstudio/mai-k304-prog/tree/main/sem-03)
-  + [Лабораторная работа №1. Вариант №1](https://github.com/SnSPstudio/mai-k304-prog/tree/main/sem-03/lab-03-v01)
+  + [Лабораторная работа №1. Вариант №1](https://github.com/SnSPstudio/mai-k304-prog/tree/main/sem-03/lab-01-v01)
