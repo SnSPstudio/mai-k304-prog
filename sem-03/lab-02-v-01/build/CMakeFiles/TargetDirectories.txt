@@ -1,0 +1,4 @@
+/home/alex_pyslar/projects/SnSP-repos/mai-k304-prog/sem-03/lab-02-v-01/build/CMakeFiles/function.dir
+/home/alex_pyslar/projects/SnSP-repos/mai-k304-prog/sem-03/lab-02-v-01/build/CMakeFiles/lab-02-v01.dir
+/home/alex_pyslar/projects/SnSP-repos/mai-k304-prog/sem-03/lab-02-v-01/build/CMakeFiles/edit_cache.dir
+/home/alex_pyslar/projects/SnSP-repos/mai-k304-prog/sem-03/lab-02-v-01/build/CMakeFiles/rebuild_cache.dir
