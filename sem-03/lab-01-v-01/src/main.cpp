@@ -1,5 +1,5 @@
-#include <iomanip>
 #include <iostream>
+#include <iomanip>
 #include <ctime>
 #include <chrono>
 #include <fstream>
@@ -7,9 +7,9 @@
 
 using namespace std;
 
-const int functionCount = 6; // Количество функций
+const int FUNCTION_COUNT = 6; // Количество функций
 
-const char* fileName[] = { // Массив имён файлов
+const char* FILE_NAME_OUT[] = { // Массив имён файлов
     {"AllRandomInt.txt"},
     {"UpRegularizeInt.txt"},
     {"DownRegularizeInt.txt"},
@@ -24,8 +24,8 @@ const char* fileName[] = { // Массив имён файлов
     {"SinFloat.txt"}
 };
 
-const char fileNameIn[] = "Input.txt"; // Имя файла входных данных
-const char fileNameTime[] = "Time.txt"; // Файл для записи времени
+const char FILE_NAME_IN[] = "Input.txt"; // Имя файла входных данных
+const char FILE_NAME_TIME[] = "Time.txt"; // Файл для записи времени
 
 // Основная программа
 int main() {
@@ -36,12 +36,12 @@ int main() {
     // Массив указателей на функции целых чисел
     void* (*menuFunctionInt[functionCount])
     (int* arr, int& size, int& interval, int& minLimitation, int& maxLimitation) =
-    {&AllRandom, &UpRegularize, &DownRegularize, &Saw, &Step, &Sin};
+    {&allRandom, &upRegularize, &downRegularize, &saw, &step, &sin};
 
     // Массив указателей на функции дробных чисел
     void* (*menuFunctionFloat[functionCount])
     (float* arr, int& size, int& interval, float& minLimitation, float& maxLimitation) =
-    {&AllRandom, &UpRegularize, &DownRegularize, &Saw, &Step, &Sin};
+    {&allRandom, &upRegularize, &downRegularize, &saw, &step, &sin};
 
     // Переменные
     int size = 0; // Количество элементов
@@ -52,7 +52,7 @@ int main() {
     float maxLimitationFloat; // Ограничение на максимальное значение для дробных чисел
 
     // Ввод значений переменных с файла
-    ifstream fin ("Input.txt"); // Открытие файла входных данных
+    ifstream fin (FILE_NAME_IN); // Открытие файла входных данных
     if (fin.is_open()) { // Проверка открытия файла
         fin >> size;
         cout << "size = " << size << endl;
@@ -73,7 +73,7 @@ int main() {
     fin.close(); // Закрытие файла
 
     // Открытие файла для записи времени выполнения алгоритма
-    ofstream foutTime(fileNameTime);
+    ofstream foutTime(FILE_NAME_TIME);
 
     // Начало отсчёта выполнения алгоритма
     auto begin = chrono::steady_clock::now();
@@ -90,8 +90,8 @@ int main() {
         // Алгоритм для целых чисел
         beginFunction = chrono::steady_clock::now(); // Начало отсчёта
         menuFunctionInt[i](arrInt, size, interval, minLimitationInt, maxLimitationInt);
-        ofstream foutInt(fileName[i]); // Открытие файла для записи целых чисел
-        cout << fileName[i] << ":" << endl;
+        ofstream foutInt(FILE_NAME_OUT[i]); // Открытие файла для записи целых чисел
+        cout << FILE_NAME_OUT[i] << ":" << endl;
         for (int j = 0; j < size; j++) {
             cout << "[" << j << "]: " << arrInt[j] << ";" << endl;
             foutInt << arrInt[j];
@@ -111,8 +111,8 @@ int main() {
         // Алгоритм для дробных чисел
         beginFunction = chrono::steady_clock::now(); // Начало отсчёта
         menuFunctionFloat[i](arrFloat, size, interval, minLimitationFloat, maxLimitationFloat);
-        ofstream foutFloat(fileName[functionCount + i]); // Открытие файла для записи дробных чисел
-        cout << fileName[functionCount + i] << ":" << endl;
+        ofstream foutFloat(FILE_NAME_OUT[functionCount + i]); // Открытие файла для записи дробных чисел
+        cout << FILE_NAME_OUT[functionCount + i] << ":" << endl;
         for (int k = 0; k < size; k++) {
             cout << "[" << k << "]: " << arrFloat[k] << ";" << endl;
             foutFloat << arrFloat[k];

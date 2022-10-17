@@ -6,16 +6,15 @@ inputVariable = []
 inputVariable = numpy.loadtxt(inputFile, unpack = True, delimiter = " ")
 size = int(inputVariable[0])
 
-x1 = []
+x = []
 for i in range(a):
-    x1.append(i)
+    x.append(i)
 print("Enter file name:")
 fileName = input()
-f_sin = open(fileName) #значения функции 1
-y_sin = []
+f = open(fileName) #значения функции 1
+y = []
 for _ in range (a):
-    y_sin.append(float(f_sin.readline()))
-
+    y.append(float(f.readline()))
 
 ax = plt.gca()
 plt.plot(x1, y_sin, linestyle='-', linewidth=1, color='dodgerblue')
