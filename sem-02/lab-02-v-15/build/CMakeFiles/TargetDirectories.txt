@@ -1,3 +1,0 @@
-/home/alex_pyslar/projects/mai-k304-prog/sem-02/lab-02-v15/build/CMakeFiles/lab-02-v15.dir
-/home/alex_pyslar/projects/mai-k304-prog/sem-02/lab-02-v15/build/CMakeFiles/edit_cache.dir
-/home/alex_pyslar/projects/mai-k304-prog/sem-02/lab-02-v15/build/CMakeFiles/rebuild_cache.dir

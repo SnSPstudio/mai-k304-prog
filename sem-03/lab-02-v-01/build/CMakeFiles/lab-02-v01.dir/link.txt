@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/lab-02-v01.dir/src/main.cpp.o -o lab-02-v01  libfunction.a 
